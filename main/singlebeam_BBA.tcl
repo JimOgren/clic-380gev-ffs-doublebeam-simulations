@@ -219,11 +219,11 @@ checkDispersionAndAlignment
 #############################################################################
 Octave {
 	printf("\nSaving data...\n");
-	fname = [save_dir, "tuning_data_",num2str($machine),".dat"]
+	fname = ["$save_dir", "/tuning_data_",num2str($machine),".dat"]
 	eval(["save ", fname," LL"]);
 
 	STATUS = placet_element_get_attributes("electron");
-	eval(["save -text ", save_dir,"machine_status_electron_$machine.dat STATUS"]);
+	eval(["save -text ", "$save_dir", "/machine_status_electron_$machine.dat STATUS"]);
 	STATUS = placet_element_get_attributes("positron");
-	eval(["save -text ", save_dir,"machine_status_positron_$machine.dat STATUS"]);
+	eval(["save -text ", "$save_dir", "/machine_status_positron_$machine.dat STATUS"]);
 }
