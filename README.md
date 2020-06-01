@@ -7,13 +7,13 @@ In this study, the two sides of the final-focus system were treated independentl
 
 ### Running the full simulation
 The full simulation is defined in separate steps. To run the whole thing:
-1) run /main/run_singlebeam_BBA.sh
-2) run /main/run_
+1) run /main/run_BBA.sh
+2) run /main/run_step1.sh
+3) run /main/run_step2.sh
+<br>and so on... the last steps are only required for a fraction of the machines.
 
 ### Requirements
 You need to have the tracking code PLACET and the beam-beam code GUINEA-PIG installed.
-
-### Publication:
 
 ### Publication:
 The results were presented in the paper: [J. Ogren et al., _Tuning the Compact Linear Collider 380 GeV final-focus system using realistic beam-beam signals_, Phys. Rev. Accel. Beams 23, 051002, May 2020.](https://journals.aps.org/prab/abstract/10.1103/PhysRevAccelBeams.23.051002)
