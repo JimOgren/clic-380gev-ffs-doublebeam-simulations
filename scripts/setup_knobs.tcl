@@ -69,9 +69,9 @@ proc sextupole_knobs_1e5 { range machine } {
 		}
 
 		# execute GUINEA-PIG in parallel:
-		exec bash -c "for i in `seq 1 1 10`  ; do ./run_guinea_parallel.sh \$i & done"
-		exec bash -c "for i in `seq 11 1 20`  ; do ./run_guinea_parallel.sh \$i & done"
-		exec bash -c "for i in `seq 21 1 29`  ; do ./run_guinea_parallel.sh \$i & done"
+		exec bash -c "for i in `seq 1 1 10`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
+		exec bash -c "for i in `seq 11 1 20`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
+		exec bash -c "for i in `seq 21 1 29`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
 
 		Octave {
 			pause(5);
@@ -141,9 +141,9 @@ proc sextupole_knobs_1e5 { range machine } {
 		}
 
 		# execute GUINEA-PIG in parallel:
-		exec bash -c "for i in `seq 1 1 10`  ; do ./run_guinea_parallel.sh \$i & done"
-		exec bash -c "for i in `seq 11 1 20`  ; do ./run_guinea_parallel.sh \$i & done"
-		exec bash -c "for i in `seq 21 1 29`  ; do ./run_guinea_parallel.sh \$i & done"
+		exec bash -c "for i in `seq 1 1 10`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
+		exec bash -c "for i in `seq 11 1 20`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
+		exec bash -c "for i in `seq 21 1 29`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
 
 		Octave {
 			pause(5);
@@ -216,9 +216,9 @@ proc sextupole_knobs_1e5 { range machine } {
 		}
 
 		# execute GUINEA-PIG in parallel:
-		exec bash -c "for i in `seq 1 1 10`  ; do ./run_guinea_parallel.sh \$i & done"
-		exec bash -c "for i in `seq 11 1 20`  ; do ./run_guinea_parallel.sh \$i & done"
-		exec bash -c "for i in `seq 21 1 29`  ; do ./run_guinea_parallel.sh \$i & done"
+		exec bash -c "for i in `seq 1 1 10`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
+		exec bash -c "for i in `seq 11 1 20`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
+		exec bash -c "for i in `seq 21 1 29`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
 
 		Octave {
 			pause(5);
@@ -289,9 +289,9 @@ proc sextupole_knobs_1e5 { range machine } {
 		}
 
 		# execute GUINEA-PIG in parallel:
-		exec bash -c "for i in `seq 1 1 10`  ; do ./run_guinea_parallel.sh \$i & done"
-		exec bash -c "for i in `seq 11 1 20`  ; do ./run_guinea_parallel.sh \$i & done"
-		exec bash -c "for i in `seq 21 1 29`  ; do ./run_guinea_parallel.sh \$i & done"
+		exec bash -c "for i in `seq 1 1 10`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
+		exec bash -c "for i in `seq 11 1 20`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
+		exec bash -c "for i in `seq 21 1 29`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
 
 		Octave {
 			pause(5);
@@ -407,9 +407,9 @@ proc octupole_knobs_1e5 { range machine } {
 		}
 
 		# execute GUINEA-PIG in parallel:
-		exec bash -c "for i in `seq 1 1 10`  ; do ./run_guinea_parallel.sh \$i & done"
-		exec bash -c "for i in `seq 11 1 20`  ; do ./run_guinea_parallel.sh \$i & done"
-		exec bash -c "for i in `seq 21 1 29`  ; do ./run_guinea_parallel.sh \$i & done"
+		exec bash -c "for i in `seq 1 1 10`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
+		exec bash -c "for i in `seq 11 1 20`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
+		exec bash -c "for i in `seq 21 1 29`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
 
 		Octave {
 			pause(5);
@@ -477,9 +477,9 @@ proc octupole_knobs_1e5 { range machine } {
 		}
 
 		# execute GUINEA-PIG in parallel:
-		exec bash -c "for i in `seq 1 1 10`  ; do ./run_guinea_parallel.sh \$i & done"
-		exec bash -c "for i in `seq 11 1 20`  ; do ./run_guinea_parallel.sh \$i & done"
-		exec bash -c "for i in `seq 21 1 29`  ; do ./run_guinea_parallel.sh \$i & done"
+		exec bash -c "for i in `seq 1 1 10`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
+		exec bash -c "for i in `seq 11 1 20`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
+		exec bash -c "for i in `seq 21 1 29`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
 
 		Octave {
 			pause(5);
@@ -550,9 +550,9 @@ proc octupole_knobs_1e5 { range machine } {
 		}
 
 		# execute GUINEA-PIG in parallel:
-		exec bash -c "for i in `seq 1 1 10`  ; do ./run_guinea_parallel.sh \$i & done"
-		exec bash -c "for i in `seq 11 1 20`  ; do ./run_guinea_parallel.sh \$i & done"
-		exec bash -c "for i in `seq 21 1 29`  ; do ./run_guinea_parallel.sh \$i & done"
+		exec bash -c "for i in `seq 1 1 10`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
+		exec bash -c "for i in `seq 11 1 20`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
+		exec bash -c "for i in `seq 21 1 29`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
 
 		Octave {
 			pause(5);
@@ -621,9 +621,9 @@ proc octupole_knobs_1e5 { range machine } {
 		}
 
 		# execute GUINEA-PIG in parallel:
-		exec bash -c "for i in `seq 1 1 10`  ; do ./run_guinea_parallel.sh \$i & done"
-		exec bash -c "for i in `seq 11 1 20`  ; do ./run_guinea_parallel.sh \$i & done"
-		exec bash -c "for i in `seq 21 1 29`  ; do ./run_guinea_parallel.sh \$i & done"
+		exec bash -c "for i in `seq 1 1 10`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
+		exec bash -c "for i in `seq 11 1 20`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
+		exec bash -c "for i in `seq 21 1 29`  ; do ./run_guinea_parallel.sh 1 1 \$i & done"
 
 		Octave {
 			pause(5);
