@@ -1,0 +1,13 @@
+executable			= run_BBA.sh
+arguments			= $(arg1)
+
++JobFlavour       = "microcentury"
+
+output				= my_tuning_BBA.$(ClusterId).$(ProcId).out
+error					= my_tuning_BBA.$(ClusterId).$(ProcId).err
+log					= my_tuning_BBA.$(ClusterId).log
+
+should_transfer_files = NO
+transfer_output_files = ""
+
+queue arg1 from input.txt
