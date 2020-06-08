@@ -1,6 +1,6 @@
 #############################################################################
 #
-# Tuning studies for single beam
+# Tuning studies for double beam
 #
 # Step 0: beam-based alignment
 #

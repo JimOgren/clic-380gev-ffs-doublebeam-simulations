@@ -1,6 +1,6 @@
 #############################################################################
 #
-# Tuning studies for single beam
+# Tuning studies for double beam
 #
 # Step 1: beamstrahlung random walk tuning
 #
