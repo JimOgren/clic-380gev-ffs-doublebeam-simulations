@@ -152,7 +152,7 @@ proc random_walk_beamstrahlung_power { subset } {
 			}
 
 			# execute GUINEA-PIG in parallel:
-			exec bash -c "for i in `seq 1 1 $NumOfPoints`  ; do ./run_guinea_parallel_2e4.sh \$i & done"
+			exec bash -c "for i in `seq 1 1 $NumOfPoints`  ; do ./run_guinea_parallel.sh 0 0 \$i & done"
 
 			Octave {
 				pause(5);
@@ -202,7 +202,7 @@ proc random_walk_beamstrahlung_power { subset } {
 			}
 
 			# execute GUINEA-PIG in parallel:
-			exec bash -c "for i in `seq 1 1 $NumOfPoints`  ; do ./run_guinea_parallel_2e4.sh \$i & done"
+			exec bash -c "for i in `seq 1 1 $NumOfPoints`  ; do ./run_guinea_parallel.sh 0 0 \$i & done"
 
 			Octave {
 				pause(5);
@@ -331,7 +331,7 @@ proc random_walk_pairs { subset } {
 			}
 
 			# execute GUINEA-PIG in parallel:
-			exec bash -c "for i in `seq 1 1 $NumOfPoints`  ; do ./run_guinea_parallel_2e4_with_pairs.sh \$i & done"
+			exec bash -c "for i in `seq 1 1 $NumOfPoints`  ; do ./run_guinea_parallel.sh 0 1 \$i & done"
 
 			Octave {
 				pause(5);
@@ -389,7 +389,7 @@ proc random_walk_pairs { subset } {
 			}
 
 			# execute GUINEA-PIG in parallel:
-			exec bash -c "for i in `seq 1 1 $NumOfPoints`  ; do ./run_guinea_parallel_2e4_with_pairs.sh \$i & done"
+			exec bash -c "for i in `seq 1 1 $NumOfPoints`  ; do ./run_guinea_parallel.sh 0 1 \$i & done"
 
 			Octave {
 				pause(5);
@@ -526,7 +526,7 @@ proc random_walk_pairs_long { subset } {
 			}
 
 			# execute GUINEA-PIG in parallel:
-			exec bash -c "for i in `seq 1 1 $NumOfPoints`  ; do ./run_guinea_parallel_2e4_with_pairs.sh \$i & done"
+			exec bash -c "for i in `seq 1 1 $NumOfPoints`  ; do ./run_guinea_parallel.sh 0 1 \$i & done"
 
 			Octave {
 				pause(5);
@@ -584,7 +584,7 @@ proc random_walk_pairs_long { subset } {
 			}
 
 			# execute GUINEA-PIG in parallel:
-			exec bash -c "for i in `seq 1 1 $NumOfPoints`  ; do ./run_guinea_parallel_2e4_with_pairs.sh \$i & done"
+			exec bash -c "for i in `seq 1 1 $NumOfPoints`  ; do ./run_guinea_parallel.sh 0 1 \$i & done"
 
 			Octave {
 				pause(5);
@@ -762,7 +762,7 @@ proc random_walk_pairs_sq { subset } {
 			}
 
 			# execute GUINEA-PIG in parallel:
-			exec bash -c "for i in `seq 1 1 $NumOfPoints`  ; do ./run_guinea_parallel_2e4_with_pairs.sh \$i & done"
+			exec bash -c "for i in `seq 1 1 $NumOfPoints`  ; do ./run_guinea_parallel.sh 0 1 \$i & done"
 
 			Octave {
 				pause(5);
@@ -820,7 +820,7 @@ proc random_walk_pairs_sq { subset } {
 			}
 
 			# execute GUINEA-PIG in parallel:
-			exec bash -c "for i in `seq 1 1 $NumOfPoints`  ; do ./run_guinea_parallel_2e4_with_pairs.sh \$i & done"
+			exec bash -c "for i in `seq 1 1 $NumOfPoints`  ; do ./run_guinea_parallel.sh 0 1 \$i & done"
 
 			Octave {
 				pause(5);
