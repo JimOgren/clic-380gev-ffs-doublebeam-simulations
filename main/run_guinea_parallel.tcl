@@ -32,7 +32,7 @@ set e0 190
 set match(charge) 5.2e9
 set match(sigma_z) 70.0
 
-if { $thick_beam == 0 } {
+if { $thick_beam == 1 } {
    set n_slice 50
    set n 2000
    set n_total [expr $n_slice*$n]
@@ -54,7 +54,7 @@ Octave {
       [L, Lpeak, beam_size, beam_strahl, beam_defl, pairs] = get_lumi_full(B1, B2);
       save ../GP_output_temp/GP_output_${beam_case}.dat L Lpeak beam_size beam_strahl beam_defl pairs
    else
-      [L, Lpeak, beam_size, beam_strahl, beam_defl, pairs] = get_lumi(B1, B2);
+      [L, Lpeak, beam_size, beam_strahl, beam_defl] = get_lumi(B1, B2);
       save ../GP_output_temp/GP_output_${beam_case}.dat L Lpeak beam_size beam_strahl beam_defl
    end
 }
