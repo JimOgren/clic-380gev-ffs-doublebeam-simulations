@@ -8,6 +8,7 @@ Octave {
 	TEMP = [];
 
 	saveLuminosityData = 1;
+	save_dir = "$save_dir"
 }
 
 # Sextupole 1st order knobs
@@ -39,6 +40,8 @@ proc sextupole_knobs_1e5 { range machine } {
 	exec bash -c "rm -rf temp_*" # remove temp folders
 	exec bash -c "mkdir -p GP_output_temp/" # create temp folder
 	exec bash -c "mkdir -p beams_temp/" # create temp folder
+
+	set NumOfPoints 29
    foreach knob { 1 2 3 } {
 
 		set axis x;
@@ -49,7 +52,7 @@ proc sextupole_knobs_1e5 { range machine } {
 		exec bash -c "rm -f beams_temp/*"
 		exec bash -c "rm -f GP_output_temp/*"
 		Octave {
-			xvec = linspace(-$range,$range,29);
+			xvec = linspace(-$range,$range,$NumOfPoints);
 			for jk=1:length(xvec)
 				vary_electron_sextupole_knob${knob}${axis}(+xvec(jk));
 
@@ -75,7 +78,7 @@ proc sextupole_knobs_1e5 { range machine } {
 
 		Octave {
 			pause(5);
-			xvec = linspace(-$range,$range,29);
+			xvec = linspace(-$range,$range,$NumOfPoints);
 			Res = [];
 			for j = 1:length(xvec)
 				eval(["load GP_output_temp/GP_output_",num2str(j),".dat"])
@@ -110,7 +113,7 @@ proc sextupole_knobs_1e5 { range machine } {
 
 			# save scan result:
 			if saveLuminosityData
-				fname = [$save_dir, "/Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
+				fname = [save_dir, "/Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
 				eval(["save ", fname," Res kfit ymax xmax"]);
 			end
 		}
@@ -121,7 +124,7 @@ proc sextupole_knobs_1e5 { range machine } {
 		exec bash -c "rm -f beams_temp/*"
 		exec bash -c "rm -f GP_output_temp/*"
 		Octave {
-			xvec = linspace(-$range,$range,29);
+			xvec = linspace(-$range,$range,$NumOfPoints);
 			for jk=1:length(xvec)
 				vary_positron_sextupole_knob${knob}${axis}(+xvec(jk));
 
@@ -147,7 +150,7 @@ proc sextupole_knobs_1e5 { range machine } {
 
 		Octave {
 			pause(5);
-			xvec = linspace(-$range,$range,29);
+			xvec = linspace(-$range,$range,$NumOfPoints);
 			Res = [];
 			for j = 1:length(xvec)
 				eval(["load GP_output_temp/GP_output_",num2str(j),".dat"])
@@ -182,7 +185,7 @@ proc sextupole_knobs_1e5 { range machine } {
 
 			# save scan result:
 			if saveLuminosityData
-				fname = [$save_dir, "/Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
+				fname = [save_dir, "/Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
 				eval(["save ", fname," Res kfit ymax xmax"]);
 			end
 		}
@@ -196,7 +199,7 @@ proc sextupole_knobs_1e5 { range machine } {
 		exec bash -c "rm -f beams_temp/*"
 		exec bash -c "rm -f GP_output_temp/*"
 		Octave {
-			xvec = linspace(-$range/5,$range/5,29);
+			xvec = linspace(-$range/5,$range/5,$NumOfPoints);
 			for jk=1:length(xvec)
 				vary_electron_sextupole_knob${knob}${axis}(+xvec(jk));
 
@@ -222,7 +225,7 @@ proc sextupole_knobs_1e5 { range machine } {
 
 		Octave {
 			pause(5);
-			xvec = linspace(-$range/5,$range/5,29);
+			xvec = linspace(-$range/5,$range/5,$NumOfPoints);
 			Res = [];
 			for j = 1:length(xvec)
 				eval(["load GP_output_temp/GP_output_",num2str(j),".dat"])
@@ -258,7 +261,7 @@ proc sextupole_knobs_1e5 { range machine } {
 
 			# save scan result:
 			if saveLuminosityData
-				fname = [$save_dir, "/Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
+				fname = [save_dir, "/Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
 				eval(["save ", fname," Res kfit ymax xmax"]);
 			end
 		}
@@ -269,7 +272,7 @@ proc sextupole_knobs_1e5 { range machine } {
 		exec bash -c "rm -f beams_temp/*"
 		exec bash -c "rm -f GP_output_temp/*"
 		Octave {
-			xvec = linspace(-$range/5,$range/5,29);
+			xvec = linspace(-$range/5,$range/5,$NumOfPoints);
 			for jk=1:length(xvec)
 				vary_positron_sextupole_knob${knob}${axis}(+xvec(jk));
 
@@ -295,7 +298,7 @@ proc sextupole_knobs_1e5 { range machine } {
 
 		Octave {
 			pause(5);
-			xvec = linspace(-$range/5,$range/5,29);
+			xvec = linspace(-$range/5,$range/5,$NumOfPoints);
 			Res = [];
 			for j = 1:length(xvec)
 				eval(["load GP_output_temp/GP_output_",num2str(j),".dat"])
@@ -330,13 +333,13 @@ proc sextupole_knobs_1e5 { range machine } {
 
 			# save scan result:
 			if saveLuminosityData
-				fname = [$save_dir, "/Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
+				fname = [save_dir, "/Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
 				eval(["save ", fname," Res kfit ymax xmax"]);
 			end
 		}
 
 		Octave {
-			Lmeas = Lmeas + 4*29;
+			Lmeas = Lmeas + 4*$NumOfPoints;
 		}
 	}
 }
@@ -377,6 +380,8 @@ proc octupole_knobs_1e5 { range machine } {
 	exec bash -c "rm -rf temp_*" # remove temp folders
 	exec bash -c "mkdir -p GP_output_temp/" # create temp folder
 	exec bash -c "mkdir -p beams_temp/" # create temp folder
+
+	set NumOfPoints 29
    foreach knob { 1 2 } {
 
 		set axis x;
@@ -387,7 +392,7 @@ proc octupole_knobs_1e5 { range machine } {
 		exec bash -c "rm -f beams_temp/*"
 		exec bash -c "rm -f GP_output_temp/*"
 		Octave {
-			xvec = linspace(-$range,$range,29);
+			xvec = linspace(-$range,$range,$NumOfPoints);
 			for jk=1:length(xvec)
 				vary_electron_octupole_knob${knob}${axis}(+xvec(jk));
 
@@ -413,7 +418,7 @@ proc octupole_knobs_1e5 { range machine } {
 
 		Octave {
 			pause(5);
-			xvec = linspace(-$range,$range,29);
+			xvec = linspace(-$range,$range,$NumOfPoints);
 			Res = [];
 			for j = 1:length(xvec)
 				eval(["load GP_output_temp/GP_output_",num2str(j),".dat"])
@@ -447,7 +452,7 @@ proc octupole_knobs_1e5 { range machine } {
 			vary_electron_octupole_knob${knob}${axis}(xmax);
 
 			# save scan result:
-			fname = [$save_dir, "/Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
+			fname = [save_dir, "/Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
 			#eval(["save ", fname," Res kfit ymax xmax"]);
 		}
 
@@ -457,7 +462,7 @@ proc octupole_knobs_1e5 { range machine } {
 		exec bash -c "rm -f beams_temp/*"
 		exec bash -c "rm -f GP_output_temp/*"
 		Octave {
-			xvec = linspace(-$range,$range,29);
+			xvec = linspace(-$range,$range,$NumOfPoints);
 			for jk=1:length(xvec)
 				vary_positron_octupole_knob${knob}${axis}(+xvec(jk));
 
@@ -483,7 +488,7 @@ proc octupole_knobs_1e5 { range machine } {
 
 		Octave {
 			pause(5);
-			xvec = linspace(-$range,$range,29);
+			xvec = linspace(-$range,$range,$NumOfPoints);
 			Res = [];
 			for j = 1:length(xvec)
 				eval(["load GP_output_temp/GP_output_",num2str(j),".dat"])
@@ -517,7 +522,7 @@ proc octupole_knobs_1e5 { range machine } {
 			vary_positron_octupole_knob${knob}${axis}(xmax);
 
 			# save scan result:
-			fname = [$save_dir, "/Res_positron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
+			fname = [save_dir, "/Res_positron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
 			#eval(["save ", fname," Res kfit ymax xmax"]);
 		}
 
@@ -530,7 +535,7 @@ proc octupole_knobs_1e5 { range machine } {
 		exec bash -c "rm -f beams_temp/*"
 		exec bash -c "rm -f GP_output_temp/*"
 		Octave {
-			xvec = linspace(-$range/5,$range/5,29);
+			xvec = linspace(-$range/5,$range/5,$NumOfPoints);
 			for jk=1:length(xvec)
 				vary_electron_octupole_knob${knob}${axis}(+xvec(jk));
 
@@ -556,7 +561,7 @@ proc octupole_knobs_1e5 { range machine } {
 
 		Octave {
 			pause(5);
-			xvec = linspace(-$range/5,$range/5,29);
+			xvec = linspace(-$range/5,$range/5,$NumOfPoints);
 			Res = [];
 			for j = 1:length(xvec)
 				eval(["load GP_output_temp/GP_output_",num2str(j),".dat"])
@@ -591,7 +596,7 @@ proc octupole_knobs_1e5 { range machine } {
 			vary_electron_octupole_knob${knob}${axis}(xmax);
 
 			# save scan result:
-			fname = [$save_dir, "/Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
+			fname = [save_dir, "/Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
 			#eval(["save ", fname," Res kfit ymax xmax"]);
 		}
 
@@ -601,7 +606,7 @@ proc octupole_knobs_1e5 { range machine } {
 		exec bash -c "rm -f beams_temp/*"
 		exec bash -c "rm -f GP_output_temp/*"
 		Octave {
-			xvec = linspace(-$range/5,$range/5,29);
+			xvec = linspace(-$range/5,$range/5,$NumOfPoints);
 			for jk=1:length(xvec)
 				vary_positron_octupole_knob${knob}${axis}(+xvec(jk));
 
@@ -627,7 +632,7 @@ proc octupole_knobs_1e5 { range machine } {
 
 		Octave {
 			pause(5);
-			xvec = linspace(-$range/5,$range/5,29);
+			xvec = linspace(-$range/5,$range/5,$NumOfPoints);
 			Res = [];
 			for j = 1:length(xvec)
 				eval(["load GP_output_temp/GP_output_",num2str(j),".dat"])
@@ -661,12 +666,12 @@ proc octupole_knobs_1e5 { range machine } {
 			vary_positron_octupole_knob${knob}${axis}(xmax);
 
 			# save scan result:
-			fname = [$save_dir, "/Res_positron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
+			fname = [save_dir, "/Res_positron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
 			#eval(["save ", fname," Res kfit ymax xmax"]);
 		}
 
 		Octave {
-			Lmeas = Lmeas + 4*29;
+			Lmeas = Lmeas + 4*$NumOfPoints;
 		}
 	}
 }
