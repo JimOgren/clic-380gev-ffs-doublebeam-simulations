@@ -110,7 +110,7 @@ proc sextupole_knobs_fast { range machine } {
 
 			# save scan result:
 			if saveLuminosityData
-				fname = [save_dir, "Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
+				fname = [$save_dir, "/Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
 				eval(["save ", fname," Res kfit ymax xmax"]);
 			end
 		}
@@ -182,7 +182,7 @@ proc sextupole_knobs_fast { range machine } {
 
 			# save scan result:
 			if saveLuminosityData
-				fname = [save_dir, "Res_positron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
+				fname = [$save_dir, "/Res_positron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
 				eval(["save ", fname," Res kfit ymax xmax"]);
 			end
 
@@ -258,7 +258,7 @@ proc sextupole_knobs_fast { range machine } {
 			vary_electron_sextupole_knob${knob}${axis}(xmax);
 
 			if saveLuminosityData
-				fname = [save_dir, "Res_positron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
+				fname = [$save_dir, "/Res_positron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
 				eval(["save ", fname," Res kfit ymax xmax"]);
 			end
 		}
@@ -329,7 +329,7 @@ proc sextupole_knobs_fast { range machine } {
 			vary_positron_sextupole_knob${knob}${axis}(xmax);
 
 			if saveLuminosityData
-				fname = [save_dir, "Res_positron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
+				fname = [$save_dir, "/Res_positron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
 				eval(["save ", fname," Res kfit ymax xmax"]);
 			end
 		}
@@ -420,7 +420,7 @@ proc sextupole_knobs_fast_2 { range machine } {
 			vary_electron_sextupole_knob${knob}${axis}(xmax);
 
 			# save scan result:
-			fname = [save_dir, "Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
+			fname = [$save_dir, "/Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
 			#eval(["save ", fname," Res kfit ymax xmax"]);
 		}
 
@@ -490,7 +490,7 @@ proc sextupole_knobs_fast_2 { range machine } {
 			vary_positron_sextupole_knob${knob}${axis}(xmax);
 
 			# save scan result:
-			fname = [save_dir, "Res_positron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
+			fname = [$save_dir, "/Res_positron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
 			#eval(["save ", fname," Res kfit ymax xmax"]);
 		}
 
@@ -563,7 +563,7 @@ proc sextupole_knobs_fast_2 { range machine } {
 			vary_electron_sextupole_knob${knob}${axis}(xmax);
 
 			# save scan result:
-			fname = [save_dir, "Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
+			fname = [$save_dir, "/Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
 			#eval(["save ", fname," Res kfit ymax xmax"]);
 		}
 
@@ -633,7 +633,7 @@ proc sextupole_knobs_fast_2 { range machine } {
 			vary_positron_sextupole_knob${knob}${axis}(xmax);
 
 			# save scan result:
-			fname = [save_dir, "Res_positron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
+			fname = [$save_dir, "/Res_positron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
 			#eval(["save ", fname," Res kfit ymax xmax"]);
 		}
 
@@ -749,7 +749,7 @@ proc octupole_knobs_fast { range machine } {
 			vary_electron_octupole_knob${knob}${axis}(xmax);
 
 			# save scan result:
-			fname = [save_dir, "Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
+			fname = [$save_dir, "/Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
 			#eval(["save ", fname," Res kfit ymax xmax"]);
 		}
 
@@ -819,7 +819,7 @@ proc octupole_knobs_fast { range machine } {
 			vary_positron_octupole_knob${knob}${axis}(xmax);
 
 			# save scan result:
-			fname = [save_dir, "Res_positron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
+			fname = [$save_dir, "/Res_positron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
 			#eval(["save ", fname," Res kfit ymax xmax"]);
 		}
 
@@ -893,7 +893,7 @@ proc octupole_knobs_fast { range machine } {
 			vary_electron_octupole_knob${knob}${axis}(xmax);
 
 			# save scan result:
-			fname = [save_dir, "Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
+			fname = [$save_dir, "/Res_electron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
 			#eval(["save ", fname," Res kfit ymax xmax"]);
 		}
 
@@ -963,7 +963,7 @@ proc octupole_knobs_fast { range machine } {
 			vary_positron_octupole_knob${knob}${axis}(xmax);
 
 			# save scan result:
-			fname = [save_dir, "Res_positron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
+			fname = [$save_dir, "/Res_positron_machine_",num2str($machine),"_knob${knob}${axis}.dat"];
 			#eval(["save ", fname," Res kfit ymax xmax"]);
 		}
 
